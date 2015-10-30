@@ -1,0 +1,3 @@
+[submodule "HopperSDK"]
+	path = HopperSDK
+	url = https://github.com/0xc010d/HopperSDK.git
