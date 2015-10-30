@@ -1,14 +1,13 @@
 #import <Foundation/Foundation.h>
 #import <Hopper/Hopper.h>
 #import "EFIFatBinary.hpp"
-#import "HPHopperServicesPatched.h"
 
 @interface EFIFatBinaryLoader : NSObject<FileLoader>
 
 @end
 
 @implementation EFIFatBinaryLoader {
-    NSObject<HPHopperServices, HPHopperServicesPatched> *_services;
+    NSObject<HPHopperServices> *_services;
 }
 
 #pragma mark - HopperPlugin
@@ -16,7 +15,7 @@
 - (instancetype)initWithHopperServices:(NSObject <HPHopperServices> *)services {
     self = [super init];
     if (self) {
-        _services = (NSObject <HPHopperServices, HPHopperServicesPatched> *)services;
+        _services = services;
     }
     return self;
 }
